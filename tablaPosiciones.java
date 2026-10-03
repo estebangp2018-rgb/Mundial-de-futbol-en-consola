@@ -33,15 +33,22 @@ public class tablaPosiciones {
         int opcion = 0; // Inicializada en 0 por seguridad
 
         // Ciclo principal del menú
+        System.out.println("  __  __ _    _ _   _ _____ _____          _       ___   ___ ___   __   ");
+        System.out.println(" |  \\/  | |  | | \\ | |  __ \\_   _|   /\\   | |     |__ \\ / _ \\__ \\ / /   ");
+        System.out.println(" | \\  / | |  | |  \\| | |  | || |    /  \\  | |        ) | | | | ) / /_   ");
+        System.out.println(" | |\\/| | |  | | . ` | |  | || |   / /\\ \\ | |       / /| | | |/ / '_ \\  ");
+        System.out.println(" | |  | | |__| | |\\  | |__| || |_ / ____ \\| |____  / /_| |_| / /| (_) | ");
+        System.out.println(" |_|  |_|\\____/|_| \\_|_____/_____/_/    \\_\\______||____|\\___/____\\___/  ");
+        System.out.println("         --- DE TABLA DE POSICIONES FIFA ---                  \n");
         do {
             try {
-                System.out.println("\n--- TABLA DE POSICIONES MUNDIAL 2026 ---");
+                
                 System.out.println("Página " + (pagina + 1) + " de " + totalPaginas + "\n");
 
                 // Imprimir encabezado
                 System.out.printf("%-25s", "SELECCION");
-                for (String col : columnas) {
-                    System.out.printf("%5s", col);
+                for (int i = 0; i < columnas.length; i++) {
+                    System.out.printf("%5s", columnas[i]);
                 }
                 System.out.println();
 
