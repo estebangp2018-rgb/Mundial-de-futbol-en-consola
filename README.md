@@ -2,32 +2,11 @@
 
 Programa en Java que muestra en la consola información del Mundial 2026: las banderas de las 48 selecciones dibujadas con matrices, la tabla de posiciones, el fixture de la fase de grupos y datos de cada país.
 
-Es el taller de Arreglos y Matrices del curso de Lógica de Programación (UPB).
 
 ## Equipo
 
 - Esteban Gonzalez Posada
 - Emanuel Zuluaga Jaramillo
-
-Grupos del Mundial asignados: (completar)
-
-Quién hizo qué:
-
-- Banderas (`FlagStandardOP.java`): (completar)
-- Tabla de posiciones (`tablaPosiciones.java`): (completar)
-- Fixture (`Fixture.java`): (completar)
-- Información de países (`Info.java`): (completar)
-- README y documentación: (completar)
-
-## Estado del proyecto
-
-- [x] Banderas de los 48 países en 4 tamaños (Grande, Mediano, Pequeño e Ícono)
-- [x] Tabla de posiciones de los 48 equipos, paginada y editable
-- [x] Fixture de la fase de grupos (72 partidos)
-- [x] Información de países: capital, apariciones en mundiales y once titular
-- [ ] Actualizar la tabla automáticamente con los resultados de los partidos
-- [ ] Guardar y compartir los datos en un archivo plano (TXT)
-- [ ] Menú principal que junte todo, con ASCII art
 
 ## Archivos
 
