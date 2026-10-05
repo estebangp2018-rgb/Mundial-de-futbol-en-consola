@@ -39,6 +39,7 @@ Quién hizo qué:
 - `Info.java`: información de cada país.
 - `FlagStandard.java` y `FlagStandardAporte.java`: versiones anteriores de las banderas.
 - `recursos/Flags.csv`: colores de las 48 banderas.
+- `presentacion/Presentacion_Mundial.pptx`: presentación de la exposición.
 
 ## Cómo ejecutarlo
 
@@ -108,4 +109,4 @@ Se elige un país de la lista y el programa muestra su capital, sus apariciones 
 - [W3Schools: arreglos multidimensionales](https://www.w3schools.com/java/java_arrays_multi.asp)
 - [GeeksforGeeks: arreglos multidimensionales](https://www.geeksforgeeks.org/multidimensional-arrays-in-java/)
 
-Presentación: (completar enlace)
+Presentación de la exposición: [Presentacion_Mundial.pptx](presentacion/Presentacion_Mundial.pptx)
