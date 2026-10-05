@@ -1,76 +1,64 @@
-# ⚽ Mundial de Fútbol en Consola
+# Mundial de Fútbol en Consola
 
-Aplicación en **Java** que simula, desde la consola, la información del Mundial 2026 (48 selecciones, 12 grupos): banderas dibujadas con matrices, información de cada país y el fixture de la fase de grupos.
+Programa en Java que muestra en la consola información del Mundial 2026: las banderas de las 48 selecciones dibujadas con matrices, la tabla de posiciones, el fixture de la fase de grupos y datos de cada país.
 
-Proyecto del taller **Arreglos y Matrices** del curso de *Lógica de Programación* (UPB).
+Es el taller de Arreglos y Matrices del curso de Lógica de Programación (UPB).
 
----
+## Equipo
 
-## 👥 Equipo de trabajo
+- Esteban Gonzalez Posada
+- Emanuel Zuluaga Jaramillo
 
-| Integrante
+Grupos del Mundial asignados: (completar)
 
-| Esteban Gonzalez Posada
-| Emanuel Zuluaga Jaramillo
+Quién hizo qué:
 
-**Grupos del Mundial asignados:** _(completar: los 4 grupos asignados, ej. A, B, C y D)_
----
+- Banderas (`FlagStandardOP.java`): (completar)
+- Tabla de posiciones (`tablaPosiciones.java`): (completar)
+- Fixture (`Fixture.java`): (completar)
+- Información de países (`Info.java`): (completar)
+- README y documentación: (completar)
 
-## ✅ Estado del proyecto
+## Estado del proyecto
 
-- [x] **Paso 1 – Banderas:** las 48 banderas en 4 tamaños (Grande, Mediano, Pequeño, Ícono)
-- [x] **Paso 3 – Fixture:** 72 partidos de la fase de grupos, consulta por grupo y por partido
-- [x] **Información de países:** capital, apariciones en mundiales y once titular 2026
-- [x] **Paso 2 – Tabla de posiciones:**
-- [ ] **Paso 4 – Archivo plano y menú principal unificado:** _(completar según avance)_
+- [x] Banderas de los 48 países en 4 tamaños (Grande, Mediano, Pequeño e Ícono)
+- [x] Tabla de posiciones de los 48 equipos, paginada y editable
+- [x] Fixture de la fase de grupos (72 partidos)
+- [x] Información de países: capital, apariciones en mundiales y once titular
+- [ ] Actualizar la tabla automáticamente con los resultados de los partidos
+- [ ] Guardar y compartir los datos en un archivo plano (TXT)
+- [ ] Menú principal que junte todo, con ASCII art
 
----
+## Archivos
 
-## 🗂️ Estructura del repositorio
+- `ConsoleColors.java`: colores para la consola.
+- `ConsoleInput.java`: lectura por teclado (viene del repo del profesor).
+- `FlagStandardOP.java`: dibuja las banderas en los 4 tamaños.
+- `tablaPosiciones.java`: tabla de posiciones.
+- `Fixture.java`: calendario de partidos.
+- `Info.java`: información de cada país.
+- `FlagStandard.java` y `FlagStandardAporte.java`: versiones anteriores de las banderas.
+- `recursos/Flags.csv`: colores de las 48 banderas.
 
-```
-Mundial-de-futbol-en-consola/
-├── README.md
-├── ConsoleColors.java       # Colores ANSI para la consola
-├── ConsoleInput.java        # Lecturas por teclado (del profesor)
-├── FlagStandardOP.java      # Banderas en 4 tamaños
-├── Info.java                # Información de cada país
-├── Fixture.java             # Fixture de la fase de grupos
-└── recursos/
-    └── Flags.csv            # Matriz de colores de las 48 banderas
-```
+## Cómo ejecutarlo
 
----
+Necesitamos el JDK instalado (`javac -version` y `java -version` deben funcionar) y una terminal con colores y UTF-8, como la de VS Code.
 
-## ▶️ Cómo ejecutar
-
-**Requisitos**
-
-- JDK 17 o superior (`java -version` y `javac -version` deben funcionar)
-- Una terminal con soporte de colores ANSI y UTF-8 (Terminal de VS Code, Windows Terminal, etc.)
-
-**Compilar** (desde la carpeta raíz del repositorio, para que `recursos/Flags.csv` se encuentre):
+Desde la carpeta principal del repositorio (para que encuentre `recursos/Flags.csv`):
 
 ```bash
 javac -encoding UTF-8 *.java
+java FlagStandardOP
+java tablaPosiciones
+java Fixture
+java Info
 ```
 
-**Ejecutar cada programa:**
+## Banderas
 
-```bash
-java FlagStandardOP   # Banderas
-java Info             # Información de países
-java Fixture          # Fixture
-```
+El `Flags.csv` tiene las 48 banderas una debajo de otra, cada una de 10 filas por 15 columnas. Cada celda es un número del 1 al 9 que representa un color:
 
----
-
-## 🏳️ Banderas
-
-- El archivo `recursos/Flags.csv` guarda las 48 banderas una debajo de otra: cada una ocupa **10 filas × 15 columnas** (480 filas en total).
-- Cada celda es un dígito de `1` a `9` que representa un color:
-
-| Dígito | Color | Dígito | Color |
+| Número | Color | Número | Color |
 |---|---|---|---|
 | 1 | Amarillo | 6 | Verde |
 | 2 | Naranja | 7 | Blanco |
@@ -78,54 +66,46 @@ java Fixture          # Fixture
 | 4 | Morado | 9 | Café |
 | 5 | Azul | | |
 
-- El programa carga el CSV en una matriz `char[480][15]` y dibuja la bandera pintando cada celda con un fondo de color (`ConsoleColors`).
-- **Tamaños** (todos con proporción 2:3):
+El programa carga el archivo en una matriz de 480 x 15 y pinta cada celda con un fondo de color. Para los tamaños más chicos, cada celda nueva toma el color de la celda del centro del bloque que le corresponde en la bandera original.
 
-| Tamaño | Filas × Columnas |
+| Tamaño | Filas x Columnas |
 |---|---|
-| Grande | 10 × 15 (original) |
-| Mediano | 6 × 9 |
-| Pequeño | 4 × 6 |
-| Ícono | 2 × 3 |
+| Grande | 10 x 15 |
+| Mediano | 6 x 9 |
+| Pequeño | 4 x 6 |
+| Ícono | 2 x 3 |
 
-  Para reducir, cada celda nueva toma el color de la celda central del bloque que le corresponde en la bandera original.
+## Tabla de posiciones
 
----
+Es una matriz de 48 equipos (filas) por 10 columnas: PJ, PG, PE, PP, GF, GC, DG, TA, TR y Pts. Se muestra en una tabla formateada de 10 equipos por página, con opciones para ir a la página siguiente o anterior y para editar cualquier valor de un equipo.
 
-## 📅 Fixture
+## Fixture
 
-`Fixture.java` guarda el calendario en dos matrices:
+Los datos están en dos matrices: los grupos (12 grupos x 4 equipos) y los partidos (72 partidos x 8 datos: número, grupo, fecha, hora, los dos equipos, estadio y ciudad).
 
-- `GRUPOS[12][4]`: los 4 equipos de cada grupo (A a L).
-- `PARTIDOS[72][8]`: número, grupo, fecha, hora, equipo 1, equipo 2, estadio y ciudad.
+El menú tiene cuatro opciones:
 
-**Menú:**
+1. Ver los partidos de un grupo (se ingresa la letra de la A a la L).
+2. Ver los partidos de todos los grupos.
+3. Ver la hora e integrantes de un partido (se ingresa el número del 1 al 72).
+4. Salir.
 
-| Opción | Qué hace |
-|---|---|
-| 1 | Muestra los equipos y los 6 partidos de un grupo (se pide la letra A-L) |
-| 2 | Muestra los partidos de los 12 grupos |
-| 3 | Muestra la hora, los integrantes, el estadio y la ciudad de un partido (1-72) |
-| 4 | Salir |
+Todas las entradas se validan, así que si se ingresa algo inválido el programa lo vuelve a pedir.
 
-- Todas las entradas se validan: letras fuera de A-L, números fuera de rango o texto vuelven a pedirse.
-- **Las fechas y horas están en hora de Colombia (UTC-5).** La FIFA publica los horarios en hora del Este de EE. UU. (ET); en junio, Colombia va una hora atrás de ET.
-- El fixture cubre la **fase de grupos** (11 al 27 de junio de 2026). Las rondas eliminatorias dependen de los resultados.
+Las fechas y horas están en hora de Colombia. La FIFA publica los horarios en hora del Este de EE. UU. y en junio Colombia va una hora atrás. Solo está la fase de grupos (del 11 al 27 de junio de 2026).
 
----
+## Información de países
 
-## 🔗 Recursos utilizados
+Se elige un país de la lista y el programa muestra su capital, sus apariciones en copas del mundo y su once titular.
 
-- [Enunciado del taller – Lógica UPB](https://xacarana.com/cursos/logica/#/6/1)
-- [Código del profesor: banderas_java](https://github.com/xaca/banderas_java) (incluye `ConsoleInput.java`)
-- [Calendario oficial de partidos – FIFA](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/match-schedule)
-- [Calendario del Mundial 2026 – Bracket Mundial 2026](https://bracketmundial2026.com/calendario)
-- [W3Schools – Java Arrays](https://www.w3schools.com/java/java_arrays.asp)
-- [W3Schools – Java Multidimensional Arrays](https://www.w3schools.com/java/java_arrays_multi.asp)
-- [Sintaxis básica de Markdown – GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+## Recursos
 
----
+- [Enunciado del taller](https://xacarana.com/cursos/logica/#/6/1)
+- [Repo del profesor (banderas_java)](https://github.com/xaca/banderas_java)
+- [Calendario oficial de la FIFA](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/match-schedule)
+- [Calendario en Bracket Mundial 2026](https://bracketmundial2026.com/calendario)
+- [W3Schools: arreglos en Java](https://www.w3schools.com/java/java_arrays.asp)
+- [W3Schools: arreglos multidimensionales](https://www.w3schools.com/java/java_arrays_multi.asp)
+- [GeeksforGeeks: arreglos multidimensionales](https://www.geeksforgeeks.org/multidimensional-arrays-in-java/)
 
-## 📎 Enlaces del taller
-
-- Presentación: _(completar enlace)_
+Presentación: (completar enlace)
