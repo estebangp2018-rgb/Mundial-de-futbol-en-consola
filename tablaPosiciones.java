@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class tablaPosiciones {
+public class TablaPosiciones {
 
     public static void main(String[] args) {
 
